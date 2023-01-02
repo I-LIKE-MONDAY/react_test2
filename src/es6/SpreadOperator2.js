@@ -42,3 +42,19 @@ console.log(combined);  // { three: 3, four: 4, other: 0, one: 1, two: 2 }
 var {other, ...others} = combined;
 console.log(other); // 0
 console.log(others);  // { three: 3, four: 4, one: 1, two: 2 }
+
+console.log('------------------- 복습 ------------------');
+
+objOne = {one: 1, two: 2, other: 0};
+objTwo = {three: 3, four: 4, other: -1};
+
+// 동일한 키를 사용한 데이터가 있을 경우, !!뒤쪽!! 에 나오는 키의 값으로 합쳐진다.
+var combined = {...objOne, ...objTwo};
+console.log(combined);  // { one: 1, two: 2, other: -1, three: 3, four: 4 }
+
+var combined = {...objTwo, ...objOne};
+console.log(combined);  // { three: 3, four: 4, other: 0, one: 1, two: 2 }
+
+var {other, ...others} = combined;
+console.log(other); // 0
+console.log(others);  // { three: 3, four: 4, one: 1, two: 2 }

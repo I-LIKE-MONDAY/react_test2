@@ -12,15 +12,15 @@ var array2 = ['three', 'four'];
 
 var combined = [array1[0], array1[1], array2[0], array2[1]];
 // 배열의 각 요소를 하나씩 추출하여 새로운 배열에 대입
-console.log(combined);
+console.log(combined);  // [ 'one', 'two', 'three', 'four' ]
 
 // array1 배열에 concat으로 array2 배열 붙이기
 var combined = array1.concat(array2);
-console.log(combined);
+console.log(combined);  // [ 'one', 'two', 'three', 'four' ]
 
 // 빈 배열에 concat 으로 배열 2개 붙이기
 var combined = [].concat(array1, array2);
-console.log(combined);
+console.log(combined);  // [ 'one', 'two', 'three', 'four' ]
 
 console.log(array1);  // [ 'one', 'two' ]
 var first = array1[0];
@@ -63,4 +63,28 @@ var tmp = 0;
 tmp = first;
 first = second;
 second = tmp;
+
+console.log('-----------------------연습------------------------');
+
+var array1 = ['one', 'two'];
+var array2 = ['three', 'four'];
+
+var combined = [...array1, ...array2];
+console.log(combined);  // [ 'one', 'two', 'three', 'four' ]
+
+var [first, second, three = 'empty', ...others] = array1;
+console.log(first); // one
+console.log(second);  // two
+console.log(three); // empty
+console.log(others);  // []
+
+// 전개연산자는 대괄호 안에서만 사용할 수 있음!
+
+// 전개연산자를 이용한 스와핑 간략화
+
+var [first, second] = [second, first];
+console.log(first); // two
+console.log(second);  // one
+console.log(three); // empty
+console.log(others);  // []
 

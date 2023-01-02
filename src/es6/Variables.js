@@ -99,14 +99,14 @@ console.log(arr5);
 
 // slice : 잘라내는데 원본은 그대로 두고 잘라낸 배열만 새로 만들어 반환해줌
 const arr6 = arr5.slice(0, 1);
-console.log(arr5);
-console.log(arr6);
+console.log(arr5);  // [ 1, 2, 3 ]
+console.log(arr6);  // [ 1 ]
 
 // 전개연산법 : '[first, ...arr7]' 이 하나의 변수명이 됨, 뒤의 arr5는 배열 or Object
 // arr5의 첫 값은 first라는 변수에 들어가고 나머지 값은 arr7에 들어감
 const [first, ...arr7] = arr5;
-console.log(first);
-console.log(arr7);
+console.log(first);  // 1
+console.log(arr7);  // [ 2, 3 ]
 
 const obj3 = {name: '아이유', age: 30};
 const obj4 = {...obj3, name: '유재석'};

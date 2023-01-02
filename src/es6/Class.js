@@ -64,3 +64,41 @@ class Circle extends Shape {
 
 var c = new Circle(0, 0, 10);
 console.log(c.area());  // 100
+
+console.log('--------------------- 복습 ----------------------');
+
+// 클래스 선언
+class Shape2 {
+  // 정적 멤버, 클래스명.정적명버명 으로 사용
+  static create(x, y) {
+    return new Shape(x, y);
+  }
+
+  // 멤버변수 선언 - let, const 등 안붙여도 되는 이유 : 여기서 name 은 '키'이다!
+  name = 'Shape';
+
+  // 생성자, 이름은 constructor 로 고정된다.
+  // 생성자에서 this.변수명을 입력 시, 멤버 변수가 선언됨.
+  constructor(x, y) { // 데이터 타입은 안써도 자동으로 인식함(자바스크립트의 장점!)
+    this.move(x, y);  // this : 객체 자기 자신을 의미함
+  }
+
+  move(x, y) {  // 키 이름 안써도 됨. 사실은 move(x: x, y: y)
+    this.x = x;
+    this.y = y;
+  }
+
+  area() {
+    return 0;
+  }
+}
+
+var s = new Shape2(20, 30);
+s.area();
+s.move(200, 300);
+console.log(s.name);  // 'Shape'
+console.log(s.x); // 200  : this.x 라는 말은 현재 클래스의 x 값을 의미
+console.log(s.y); // 300  : this.y 라는 말은 현재 클래스의 y 값을 의미
+
+
+
